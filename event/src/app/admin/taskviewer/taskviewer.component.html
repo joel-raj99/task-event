@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+
+<!-- taskviewer.component.html -->
+<table class="table table-borderless">
+    <thead>
+      <tr>
+        
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Assigned To</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <th scope="row">{{ task.title }}</th>
+    
+        <td>{{ task.description }}</td>
+        <td>{{ task.assignedto.fullname }}</td> <!-- Display assigned employee's full name -->
+        <td>{{ task.startdate }}</td>
+        <td>{{ task.duedate }}</td>
+        <td>{{ task.status }}</td>
+      </tr>
+    </tbody>
+</table>
+  
+  
+  
+  

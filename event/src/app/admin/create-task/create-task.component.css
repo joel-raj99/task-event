@@ -1,0 +1,28 @@
+form{
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    margin-left: 400px;
+    margin-top: 50px;
+    text-transform: capitalize;
+
+}
+.card-title{
+    position: relative;
+    display: inline-block;
+    margin-left: 700px;
+    margin-top: 50px;
+    
+}
+.error{
+    color:orange;
+    font-size: 15px;
+    font-weight: bold;
+}
+.card-name{
+    position: relative;
+    display: inline-flex;
+    margin-left: 700px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}

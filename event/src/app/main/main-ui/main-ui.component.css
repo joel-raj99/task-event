@@ -1,0 +1,33 @@
+h4{
+    position: relative;
+    display: flex;
+    margin-left: 500px;
+    margin-top: 150px;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    cursor:grab;
+}
+
+
+
+.btn-primary{
+    position: relative;
+    display: inline-block;
+  margin-left: 350px;
+  margin-top: 150px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  text-transform: uppercase;
+
+}
+
+.btn-success{
+    position: relative;
+    display: inline-block;
+  margin-left: 450px;
+  margin-top: 150px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  text-transform: uppercase;
+
+}

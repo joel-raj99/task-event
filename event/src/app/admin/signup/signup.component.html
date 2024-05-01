@@ -1,0 +1,40 @@
+
+<div class="card bg-dark text-white">
+    <video autoplay muted loop>
+        <source src="../../../assets/6774633-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+      <div class="card-img-overlay">
+        <h4 class="card-title">admin signup pages </h4>
+        <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="exampleInputname1">name</label>
+              <input type="text" class="form-control" id="exampleInputname1" formControlName="fullname">
+              <div *ngIf="signForm.get('name')?.invalid && signForm.get('name')?.touched">
+                <div *ngIf="signForm.get('name')?.errors?.['required']" class="error">name is required</div>
+                <div *ngIf="signForm.get('name')?.errors?.['name']" class="error">Invalid name format</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email">
+              <div *ngIf="signForm.get('email')?.invalid && signForm.get('email')?.touched">
+                <div *ngIf="signForm.get('email')?.errors?.['required']" class="error">Email is required</div>
+                <div *ngIf="signForm.get('email')?.errors?.['email']" class="error">Invalid email format</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+              <div *ngIf="signForm.get('password')?.invalid && signForm.get('password')?.touched">
+                <div *ngIf="signForm.get('password')?.errors?.['required']" class="error">password is required</div>
+                <div *ngIf="signForm.get('password')?.errors?.['password']" class="error">Invalid password format</div>
+              </div>
+            </div>
+            
+            <span class="text-success">DO YOU HAVE ACCOUNT <a routerLink="/login1" class="text-white">CLICK HERE !!!</a></span>
+            <br><br><br>
+            <button type="submit" class="btn btn-primary" [disabled]="!signForm">Submit</button>
+          </form>
+      </div>
+    </div>
+    

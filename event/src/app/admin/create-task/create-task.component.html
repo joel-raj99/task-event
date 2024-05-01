@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<div class="card bg-dark text-white">
+  <video autoplay loop muted>
+    <source src="../../../assets/6774633-hd_1920_1080_30fps.mp4" type>
+  </video>
+  <div class="card-img-overlay">
+    <h4 class="card-name">create-task user </h4>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" formControlName="title" id="title">
+        <div *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched" class="error">
+          Title is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="assignedTo">Assigned To:</label>
+        <select class="form-control" formControlName="assignedto" id="assignedTo">
+          <option *ngFor="let employee of employees" [value]="employee.value">{{ employee.fullName }}</option>
+        </select>
+        <div *ngIf="taskForm.get('assignedto')?.invalid && taskForm.get('assignedto')?.touched" class="error">
+          Assigned To is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" formControlName="description" id="description"></textarea>
+        <div *ngIf="taskForm.get('description')?.invalid && taskForm.get('description')?.touched">
+          <div *ngIf="taskForm.get('description')?.errors?.['required']" class="error">Description is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select class="form-control" formControlName="status" id="status">
+          <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+        </select>
+        <div *ngIf="taskForm.get('status')?.invalid && taskForm.get('status')?.touched">
+          <div *ngIf="taskForm.get('status')?.errors?.['required']" class="error">Status is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" class="form-control" formControlName="startdate" id="startDate">
+        <div *ngIf="taskForm.get('startdate')?.invalid && taskForm.get('startdate')?.touched">
+          <div *ngIf="taskForm.get('startdate')?.errors?.['required']" class="error">Start Date is required</div>
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="duedate">To Date:</label>
+        <input type="date" class="form-control" formControlName="duedate" id="duedate"
+          [value]="formattedDate">
+        <div *ngIf="taskForm.get('duedate')?.invalid && taskForm.get('duedate')?.touched">
+          <div *ngIf="taskForm.get('duedate')?.errors?.['required']" class="error">Due Date is required</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
